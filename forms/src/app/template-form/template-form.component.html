@@ -1,0 +1,25 @@
+<form #formulario="ngForm" (ngSubmit)="onSubmit(formulario)">
+  <div class="form-group">
+    <label for="inputEmail">Email</label>
+    <input
+      type="email"
+      class="form-control"
+      id="inputEmail"
+      placeholder="email@email.com.br"
+      name="inputEmail"
+      ngModel
+    />
+  </div>
+  <div class="form-group">
+    <label for="inputPassword">Password</label>
+    <input
+      type="password"
+      class="form-control"
+      id="inputPassword"
+      placeholder="Password"
+      name="inputPassword"
+      ngModel
+    />
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
