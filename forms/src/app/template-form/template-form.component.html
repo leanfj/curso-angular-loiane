@@ -7,7 +7,7 @@
       id="inputEmail"
       placeholder="email@email.com.br"
       name="inputEmail"
-      ngModel
+      [(ngModel)]="user.email"
     />
   </div>
   <div class="form-group">
@@ -18,7 +18,7 @@
       id="inputPassword"
       placeholder="Password"
       name="inputPassword"
-      ngModel
+      [(ngModel)]="user.password"
     />
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
