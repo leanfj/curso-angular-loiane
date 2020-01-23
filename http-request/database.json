@@ -3,6 +3,10 @@
     {
       "id": 1,
       "name": "angular"
+    },
+    {
+      "name": "React",
+      "id": 2
     }
   ]
 }
