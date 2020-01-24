@@ -6,6 +6,7 @@ import { catchError } from 'rxjs/operators';
 
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { AlertModalComponent } from '../../shared/alert-modal/alert-modal.component';
+import { AlertModalService } from 'src/app/shared/alert-modal.service';
 
 @Component({
   selector: 'app-cursos-lista',
@@ -15,13 +16,11 @@ import { AlertModalComponent } from '../../shared/alert-modal/alert-modal.compon
 })
 export class CursosListaComponent implements OnInit {
 
-  // cursos: Curso[]
-
   cursos$: Observable<Curso[]>;
   errors$ = new Subject<boolean>();
   bsModalRef: BsModalRef;
 
-  constructor(private service: CursosService, private modalService: BsModalService) { }
+  constructor(private service: CursosService, private alerteService: AlertModalService) { }
 
   ngOnInit() {
     this.onRefresh()
@@ -39,8 +38,6 @@ export class CursosListaComponent implements OnInit {
 
 
   handleError() {
-    this.bsModalRef = this.modalService.show(AlertModalComponent)
-    this.bsModalRef.content.type = 'danger'
-    this.bsModalRef.content.message = 'Error ao carregar cursos...Tente novamente mais tarde'
+    this.alerteService.showAlertDanger('Error ao carregar cursos...Tente novamente mais tarde')
   }
 }
