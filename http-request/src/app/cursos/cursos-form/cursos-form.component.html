@@ -1,17 +1,17 @@
 <form class="needs-validation" novalidate [formGroup]="form" style="margin-top: 10px;">
   <div class="form-row">
     <div class="col-sm-12">
-      <label for="nome">Nome do Curso</label>
-      <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome do Curso" formControlName="nome"
-        [ngClass]="{ 'is-invalid': submitted && hasError('nome') }">
-      <div class="invalid-feedback" *ngIf="hasError('nome') && hasError('nome')['required']">
+      <label for="name">Nome do Curso</label>
+      <input type="text" class="form-control" name="name" id="name" placeholder="Nome do Curso" formControlName="name"
+        [ngClass]="{ 'is-invalid': submitted && hasError('name') }">
+      <div class="invalid-feedback" *ngIf="hasError('name') && hasError('name')['required']">
         Informe um nome válido para o curso
       </div>
-      <div class="invalid-feedback" *ngIf="hasError('nome') && hasError('nome')['minlength']">
-        Informe um nome com no mínimo de {{ hasError('nome')['minlength'].requiredLength }} caracteres
+      <div class="invalid-feedback" *ngIf="hasError('name') && hasError('name')['minlength']">
+        Informe um nome com no mínimo de {{ hasError('name')['minlength'].requiredLength }} caracteres
       </div>
-      <div class="invalid-feedback" *ngIf="hasError('nome') && hasError('nome')['maxlength']">
-        Informe um nome com no máximo de {{ hasError('nome')['maxlength'].requiredLength }} caracteres
+      <div class="invalid-feedback" *ngIf="hasError('name') && hasError('name')['maxlength']">
+        Informe um nome com no máximo de {{ hasError('name')['maxlength'].requiredLength }} caracteres
       </div>
     </div>
   </div>

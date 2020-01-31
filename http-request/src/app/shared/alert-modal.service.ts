@@ -15,17 +15,23 @@ export class AlertModalService {
 
   constructor(private modalServide: BsModalService) { }
 
-  private showAlert(message: string, type: string) {
-    const bsModaRef: BsModalRef = this.modalServide.show(AlertModalComponent)
-    bsModaRef.content.type = type
-    bsModaRef.content.message = message
+  private showAlert(message: string, type: string, dismissTimeout?: number) {
+    const bsModalRef: BsModalRef = this.modalServide.show(AlertModalComponent)
+    bsModalRef.content.type = type
+    bsModalRef.content.message = message
+
+    if (dismissTimeout) {
+      setTimeout(() => {
+        bsModalRef.hide()
+      }, dismissTimeout)
+    }
   }
 
   showAlertDanger(message: string) {
     this.showAlert(message, AlertTypes.DANGER)
   }
   showAlertSucces(message: string) {
-    this.showAlert(message, AlertTypes.SUCCESS)
+    this.showAlert(message, AlertTypes.SUCCESS, 2000)
   }
 
 }
